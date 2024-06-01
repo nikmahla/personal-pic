@@ -1,0 +1,151 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e2e1e1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.ring {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover>i {
+        border: 6px solid var(--clr);
+        filter: drop-shadow(0 0 20px var(--clr));
+
+    }
+
+    >i {
+        position: absolute;
+        inset: 0;
+        border: 2px solid #fff;
+        transition: 0.5s;
+
+        &:nth-child(1) {
+            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            animation: animate 6s linear infinite;
+        }
+
+        &:nth-child(2) {
+            border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+            animation: animate 4s linear infinite;
+        }
+
+        &:nth-child(3) {
+            border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+            animation: animate2 10s linear infinite;
+        }
+    }
+
+
+
+    >.pic {
+
+
+        width: fit-content;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        filter: drop-shadow(0 0 20px var(--clr));
+
+        >figure {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+
+            >img {
+                border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+                object-fit: cover;
+
+            }
+        }
+
+        >.logos {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+
+            >svg {
+                width: 10%;
+                height: 10%;
+                color: wheat;
+
+
+                &:nth-child(1) {
+                    position: absolute;
+                    top: 15%;
+                    left: 10%;
+                }
+
+                &:nth-child(2) {
+                    position: absolute;
+                    top: 40%;
+                    left: 10%;
+                }
+
+                &:nth-child(3) {
+                    position: absolute;
+                    top: 65%;
+                    left: 10%;
+                }
+
+            }
+
+        }
+
+        &:hover>.logos {
+            opacity: 1;
+            left: -30%;
+            transition: 3s;
+
+        }
+
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
